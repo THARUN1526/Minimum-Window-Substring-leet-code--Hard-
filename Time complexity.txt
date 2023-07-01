@@ -1,0 +1,7 @@
+The time complexity of the given code is O(m + n), where m is the length of string `s` and n is the length of string `t`.
+
+The code iterates through the characters of string `s` once using a single for loop, which takes O(m) time. Within the loop, there is a while loop that can potentially iterate through all the characters of `s` as well, but each character is visited at most twice in total (once by the `right` pointer and once by the `left` pointer). Therefore, the while loop also takes O(m) time in total.
+
+Additionally, the code initializes a counter or dictionary for `count`, which takes O(n) time to count the characters in string `t`. Other operations like updating counts, checking if the window contains all characters from `t`, and updating the minimum window length all take constant time.
+
+Thus, the overall time complexity of the code is O(m + n), where m is the length of string `s` and n is the length of string `t`.
