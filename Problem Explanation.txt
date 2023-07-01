@@ -1,0 +1,17 @@
+The problem requires finding the minimum window substring in string `s` that contains all the characters from string `t`. The window substring must include all the characters from `t` in any order and can also include additional characters from `s`. The objective is to find the smallest possible window substring that satisfies this condition.
+
+To solve this problem, we can use a sliding window approach. We initialize two pointers, `left` and `right`, to define the window boundaries. We move the `right` pointer to expand the window until we include all the characters from `t` in the window. Once we have a valid window, we move the `left` pointer to try to minimize the window size while still satisfying the condition.
+
+Here's an outline of the algorithm:
+1. Initialize a dictionary or counter, `required`, to store the count of characters in `t`.
+2. Initialize `left` and `right` pointers to the start of string `s`.
+3. Initialize variables `minLength` and `minLeft` to keep track of the minimum window substring found so far.
+4. While the `right` pointer is within the bounds of `s`:
+   - Expand the window by moving the `right` pointer to the right.
+   - Update the counts in the `required` dictionary based on the characters encountered.
+   - Check if the current window contains all the characters from `t` by comparing the counts in `required` with the required counts.
+   - If the window contains all characters from `t`, calculate the window length and update `minLength` and `minLeft` if necessary.
+   - Shrink the window by moving the `left` pointer to the right and update the counts in `required`.
+5. Once the loop ends, return the minimum window substring found using `minLeft` and `minLength`.
+
+The algorithm efficiently finds the minimum window substring by using two pointers to slide the window and maintaining the required counts of characters in `t`. It iterates over the string `s` only once, resulting in a time complexity of O(m + n), where m and n are the lengths of strings `s` and `t`, respectively.
