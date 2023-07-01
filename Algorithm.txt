@@ -1,0 +1,20 @@
+The algorithm of the  code is used to find the minimum window in string `s` that contains all the characters from string `t`. Here's a brief explanation of the algorithm:
+
+1. Initialize a counter `count` to keep track of the characters and their frequencies in string `t`.
+2. Initialize a variable `required` to store the count of distinct characters in string `t`.
+3. Initialize `bestLeft` to -1, which will store the starting index of the minimum window found so far.
+4. Initialize `minLength` to a value greater than the length of string `s`.
+5. Initialize two pointers, `l` and `r`, representing the left and right indices of the window in string `s`.
+6. Iterate through the characters `c` in string `s` using the enumerate function, which provides the index `r` and the character `c`.
+7. Decrease the count of character `c` in the `count` dictionary.
+8. If the count of character `c` is still greater than or equal to 0 (meaning it is one of the required characters), decrease the `required` count.
+9. Enter a while loop as long as `required` is 0, indicating that the current window contains all the required characters.
+10. Check if the current window's length, `r - l + 1`, is smaller than the current minimum length (`minLength`).
+11. If it is, update `bestLeft` to `l` and `minLength` to the new minimum length.
+12. Increase the count of the character at index `l` in the `count` dictionary.
+13. If the count of the character becomes greater than 0 (meaning it was one of the required characters), increase the `required` count.
+14. Move the left pointer `l` to the right by one position.
+15. Continue steps 7-14 until the end of string `s`.
+16. Finally, return an empty string if no valid window was found (i.e., `bestLeft` remains -1), or return the substring of `s` from index `bestLeft` to `bestLeft + minLength`.
+
+In summary, the algorithm uses a sliding window approach to find the minimum window in string `s` that contains all the characters from string `t`. It maintains a count of required characters and slides the window by moving the left pointer and updating the minimum window whenever all required characters are present in the current window.
